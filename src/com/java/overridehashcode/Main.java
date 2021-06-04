@@ -1,6 +1,8 @@
 package com.java.overridehashcode;
 
-import java.util.Iterator;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 
@@ -15,7 +17,7 @@ public class Main {
         linked.add(customer);
         linked.add(customer1);
         linked.add(customer2);
-        int choice = 0;
+        int choice;
         do{
             System.out.println("1.AddCustomer\n2.DeleteCustomer\n3.ViewCustomers\n4.Exit");
             System.out.println("select operation to performed :");
@@ -41,7 +43,7 @@ public class Main {
 
 
 
-    public static void addCustomer(LinkedHashSet<Customer> linked, Scanner scanner){
+    public static void addCustomer(@NotNull LinkedHashSet<Customer> linked, Scanner scanner){
         scanner.nextLine();
         System.out.println("Enter name :");
         String name = scanner.nextLine();
@@ -54,21 +56,25 @@ public class Main {
     }
     private static void deleteCustomer(LinkedHashSet<Customer> linked, Scanner scanner) {
         scanner.nextLine();
+        int flag = 0;
         System.out.println("Enter name :");
         String name = scanner.nextLine();
         for(Customer c : linked){
             if(c.getName().equals(name)){
+                flag = 1;
                 linked.remove(c);
                 System.out.println(name+" removed successfully");
 
             }
         }
+        if(flag == 0){
+            System.out.println(name+" not present in LinkedHashSet operation unsuccessful");
+        }
     }
 
     private static void ViewCustomers(LinkedHashSet<Customer> linked) {
-        Iterator<Customer> itr = linked.iterator();
-        while (itr.hasNext()){
-            System.out.println(itr.next());
+        for (Customer customer : linked) {
+            System.out.println(customer);
         }
 
     }
