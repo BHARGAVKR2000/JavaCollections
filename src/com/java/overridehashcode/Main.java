@@ -1,5 +1,6 @@
 package com.java.overridehashcode;
 
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 
 public class Main {
@@ -13,9 +14,9 @@ public class Main {
         linked.add(customer1);
         linked.add(customer2);
 
-
-        for(Customer c : linked){
-            System.out.println("name : "+c.getName()+" age :"+c.getAge());
+        Iterator<Customer> itr = linked.iterator();
+        while(itr.hasNext()){
+            System.out.println(itr.next());
         }
     }
 }
