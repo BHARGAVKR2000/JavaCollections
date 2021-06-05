@@ -1,7 +1,6 @@
 package com.java.collections.hashset;
 
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args)
@@ -32,12 +31,7 @@ public class Main {
 
         //Iterating through HashSet
 
-        Iterator<Student> it = set.iterator();
-
-        while (it.hasNext())
-        {
-            Student student = (Student) it.next();
-
+        for (Student student : set) {
             System.out.println(student);
         }
     }
