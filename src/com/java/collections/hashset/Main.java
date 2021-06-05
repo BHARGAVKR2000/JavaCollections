@@ -6,7 +6,7 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args)
     {
-        HashSet<Student> set = new HashSet<Student>();
+        HashSet<Student> set = new HashSet<>();
 
         //Adding elements to HashSet
 
