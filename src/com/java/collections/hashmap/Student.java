@@ -37,18 +37,18 @@ public class Student {
         this.courseName = courseName;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Student student = (Student) o;
-//        return name.equals(student.name) && Objects.equals(courseName, student.courseName);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(name, rollNo);
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return name.equals(student.name) && Objects.equals(courseName, student.courseName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, rollNo);
+    }
 
     @Override
     public String toString() {
