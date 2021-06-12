@@ -51,6 +51,6 @@ public class Customer {
     @Override
     public boolean equals(Object obj) {
         Customer customer = (Customer)obj;
-        return name == customer.name && age == customer.age && city == customer.city;
+        return name == customer.name && age == customer.age;
     }
 }
